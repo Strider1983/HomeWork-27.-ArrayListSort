@@ -7,21 +7,11 @@ import java.util.Arrays;
 
 public class IntegerListImpl implements IntegerList{
 
-    Integer[] numbers = new Integer[100000];
+    Integer[] numbers = new Integer[5];
     private static void swapElements(Integer[] arr, int indexA, int indexB) {
         int tmp = arr[indexA];
         arr[indexA] = arr[indexB];
         arr[indexB] = tmp;
-    }
-    @Override
-    public void sortBubble() {
-        for (int i = 0; i < numbers.length - 1; i++) {
-            for (int j = 0; j < numbers.length - 1 - i; j++) {
-                if (numbers[j] > numbers[j + 1]) {
-                    swapElements(numbers, j, j + 1);
-                }
-            }
-        }
     }
 
     @Override
@@ -35,28 +25,6 @@ public class IntegerListImpl implements IntegerList{
             }
             swapElements(numbers, i, minElementIndex);
         }
-    }
-
-    @Override
-    public void sortInsertion() {
-        for (int i = 1; i < numbers.length; i++) {
-            int temp = numbers[i];
-            int j = i;
-            while (j > 0 && numbers[j - 1] >= temp) {
-                numbers[j] = numbers[j - 1];
-                j--;
-            }
-            numbers[j] = temp;
-        }
-    }
-
-    @Override
-    public Integer[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = random.nextInt(100000) + 100000;
-        }
-        return numbers;
     }
 
     @Override

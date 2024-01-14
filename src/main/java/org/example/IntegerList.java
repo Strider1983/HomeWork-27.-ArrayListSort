@@ -1,7 +1,6 @@
 package org.example;
 
 public interface IntegerList {
-    Integer[] generateRandomArray();
     Integer add(Integer number);
     Integer addToSpecCell(int index, Integer number);
     Integer set(int index, Integer number);
@@ -15,9 +14,7 @@ public interface IntegerList {
     boolean isEmpty();
     void clear();
     Integer[] toArray();
-    void sortBubble();
     void sortSelection();
-    void sortInsertion();
     boolean containsBin(Integer element);
 
 }
