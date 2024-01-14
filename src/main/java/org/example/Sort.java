@@ -10,7 +10,7 @@ public class Sort {
         System.out.println(System.currentTimeMillis() - start);
         Integer[] nums2 = integerList.generateRandomArray();
         long start2 = System.currentTimeMillis();
-        integerList.sortSelection(nums2);
+        integerList.sortSelection();
         System.out.println(System.currentTimeMillis() - start2);
         Integer[] nums3 = integerList.generateRandomArray();
         long start3 = System.currentTimeMillis();

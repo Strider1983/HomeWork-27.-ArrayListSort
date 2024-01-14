@@ -16,7 +16,8 @@ public interface IntegerList {
     void clear();
     Integer[] toArray();
     void sortBubble(Integer[] arr);
-    void sortSelection(Integer[] arr);
+    void sortSelection();
     void sortInsertion(Integer[] arr);
+    boolean containsBin(Integer element);
 
 }

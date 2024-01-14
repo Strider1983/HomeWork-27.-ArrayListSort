@@ -25,15 +25,15 @@ public class IntegerListImpl implements IntegerList{
     }
 
     @Override
-    public void sortSelection(Integer[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
+    public void sortSelection() {
+        for (int i = 0; i < numbers.length - 1; i++) {
             int minElementIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[minElementIndex]) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] < numbers[minElementIndex]) {
                     minElementIndex = j;
                 }
             }
-            swapElements(arr, i, minElementIndex);
+            swapElements(numbers, i, minElementIndex);
         }
     }
 
@@ -191,5 +191,28 @@ public class IntegerListImpl implements IntegerList{
     public Integer[] toArray() {
         Integer[] newNumbers = Arrays.copyOf(numbers, numbers.length);
         return newNumbers;
+    }
+
+    @Override
+    public boolean containsBin(Integer element) {
+        sortSelection();
+
+        int min = 0;
+        int max = numbers.length - 1;
+
+        while (min <= max) {
+            int mid = (min + max) / 2;
+
+            if (element == numbers[mid]) {
+                return true;
+            }
+
+            if (element < numbers[mid]) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return false;
     }
 }
