@@ -3,20 +3,20 @@ package org.example;
 import java.util.Arrays;
 
 public class Sort {
-    public static int[] generateRandomArray() {
+    public static Integer[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
-        int[] arr = new int[100000];
+        Integer[] arr = new Integer[100000];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
         }
         return arr;
     }
-    private static void swapElements(int[] arr, int indexA, int indexB) {
+    private static void swapElements(Integer[] arr, int indexA, int indexB) {
         int tmp = arr[indexA];
         arr[indexA] = arr[indexB];
         arr[indexB] = tmp;
     }
-    public static void sortBubble(int[] arr) {
+    public static void sortBubble(Integer[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -25,7 +25,7 @@ public class Sort {
             }
         }
     }
-    public static void sortSelection(int[] arr) {
+    public static void sortSelection(Integer[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             int minElementIndex = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -36,7 +36,7 @@ public class Sort {
             swapElements(arr, i, minElementIndex);
         }
     }
-    public static void sortInsertion(int[] arr) {
+    public static void sortInsertion(Integer[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int temp = arr[i];
             int j = i;
@@ -50,22 +50,22 @@ public class Sort {
 
 
     public static void main(String[] args) {
-        System.out.println("Sort");
-        int[] nums = generateRandomArray();
-        int[] nums2 = Arrays.copyOf(nums, nums.length);
-        int[] nums3 = Arrays.copyOf(nums, nums.length);
+        //System.out.println("Sort");
+        Integer[] nums = generateRandomArray();
+        Integer[] nums2 = Arrays.copyOf(nums, nums.length);
+        Integer[] nums3 = Arrays.copyOf(nums, nums.length);
 
-        long start = System.currentTimeMillis();
-        sortBubble(nums);
-        System.out.println(System.currentTimeMillis() - start);
+        //long start = System.currentTimeMillis();
+        //sortBubble(nums);
+        //System.out.println(System.currentTimeMillis() - start);
 
-        long start2 = System.currentTimeMillis();
-        sortSelection(nums2);
-        System.out.println(System.currentTimeMillis() - start2);
+        //long start2 = System.currentTimeMillis();
+        //sortSelection(nums2);
+        //System.out.println(System.currentTimeMillis() - start2);
 
-        long start3 = System.currentTimeMillis();
-        sortInsertion(nums3);
-        System.out.println(System.currentTimeMillis() - start3);
+        //long start3 = System.currentTimeMillis();
+        //sortInsertion(nums3);
+        //System.out.println(System.currentTimeMillis() - start3);
     }
 }
 
